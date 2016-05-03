@@ -1,13 +1,8 @@
-//
 //  CircleDiagram.m
-//  
-//
-//  Created by Aleksandr_Bydaiev on 3/29/16.
-//  Copyright © 2016 Aleksandr_Bydaiev. All rights reserved.
-//
+//  Created by Aleksandr_Bydaiev.
+
 
 #import "CircleViewController.h"
-
 #import <CoreGraphics/CoreGraphics.h>
 #import <QuartzCore/QuartzCore.h>
 #import "Period.h"
@@ -36,7 +31,6 @@ static NSInteger const kRadius = 100;
 @interface CircleViewController ()
 
 @property (strong, nonatomic) Period *period;
-
 @property (strong, nonatomic) IBOutlet UIView *backGround;
 @property (strong, nonatomic) IBOutlet UIView *diagram;
 @property (strong, nonatomic) IBOutlet UIView *frontView;
@@ -88,7 +82,7 @@ static NSInteger const kRadius = 100;
     
     [piePath addLineToPoint:CGPointMake(center.x + kRadius * cosf(startAngle), center.y + kRadius * sinf(startAngle))];
     [piePath addArcWithCenter:center radius:kRadius startAngle:startAngle endAngle:DEGREES_TO_RADIANS(endAngle) clockwise:YES];
-    [piePath closePath]; // this will automatically add a straight line to the center
+    [piePath closePath];
     
     slice.path = piePath.CGPath;
     
